@@ -1,30 +1,27 @@
 import { useState } from "react";
-import "./App.css"
+import "./App.css";
 import Bot from "./Bot";
 
-function BotCollection({ bots }) {
-  const [inArmy, setInArmy] = useState([]);
-
+function BotCollection({ bots, inArmy, setInArmy }) {
   //Add a bot to 'YourBotArmy'
   function addToArmy(ev) {
     const btnID = ev.target.value;
-  //Check if bot is already in the Army before adding
-  //inArmy.map((army,i) => {})
-  const locateBot = inArmy.find((army) => army.id === btnID)
-  
-  if (!locateBot) {
-    const newArmyBot = bots.find((b) => b.id === btnID)   //find the bot in the database with the same id as the one clicked 
-   
-    //Check if newArmyBot has a value
-    if (newArmyBot) {
-      setInArmy((bot) => [...bot, newArmyBot]); //add that bot to the army
-    } else{ alert ("Bot not found in the database!")}
 
-  } else {
-    alert('Bot is Already in the Army');
-  }
-    console.warn(inArmy);
-    
+    //Check if bot is already in the Army before adding
+    const locateBot = inArmy.find((army) => army.id === btnID);
+
+    if (!locateBot) {
+      const newArmyBot = bots.find((b) => b.id === btnID); //find the bot in the database with the same id as the one clicked
+
+      //Check if newArmyBot has a value
+      if (newArmyBot) {
+        setInArmy((bot) => [...bot, newArmyBot]); //add that bot to the army
+      } else {
+        alert("Bot not found in the database!");
+      }
+    } else {
+      alert("Bot is Already in the Army");
+    }
   }
 
   return (
