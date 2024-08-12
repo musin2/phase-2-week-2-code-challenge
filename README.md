@@ -5,7 +5,7 @@ Welcome to **Bot Battlr**, the ultimate app where you can custom-build your own 
 ## Features
 
 - **View All Bots**: See profiles of all available bots in the `BotCollection` component.
-- **Enlist Bots**: Add a bot to your army by clicking on it. The bot will appear in the `YourBotArmy` component but will remain in the `BotCollection`.
+- **Enlist Bots**: Add a bot to your army by clicking on the `Add` button. The bot will appear in the `YourBotArmy` component but will remain in the `BotCollection`.
 - **Release Bots**: Remove a bot from your army by clicking on it. The bot will disappear from the `YourBotArmy`.
 - **Discharge Bots Forever**: Permanently delete a bot from the backend and the `YourBotArmy` by clicking the red "x" button.
 

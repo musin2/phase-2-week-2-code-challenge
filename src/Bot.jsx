@@ -11,23 +11,13 @@ function Bot({
   catchphrase,
   created_at,
   updated_at,
-}) 
-{
-    const [inArmy, setInArmy] = useState([]);
-    const [addedToArmy, setaddedToArmy] = useState(false);
-
-    function dischargeBot(event) {
-        console.log(id);
-        
-    }
-
-    function addToArmy(ev) {
-        setaddedToArmy(true);
-        setInArmy((a) => a= [...inArmy,id])
-        console.log(inArmy);
-        
-        
-    }
+  addToArmy,
+}) {
+  //Delete a bot from the Database (db.json)
+  function dischargeBot(event) {
+    console.log(id);
+  }
+  //Bot is Added to Army via a callback function from BotCollection
 
   return (
     <tr>

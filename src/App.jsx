@@ -7,14 +7,14 @@ import YourBotArmy from "./YourBotArmy";
 
 function App() {
   const [bots, setBots] = useState(0)
-
+//GET bots data from database
   useEffect(() => {
     fetch("http://localhost:3000/bots")
     .then((response) => response.json())
     .then((bData) => setBots(bData))
     .catch((error) => console.error("Failed to GET BOT data"+error))
   },[])
-
+//Display message while data is being fetched
   if(!bots) return <h1>Loading ...</h1>
 
   return (
