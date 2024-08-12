@@ -58,6 +58,8 @@ function BotCollection({ bots, inArmy, setInArmy }) {
                 created_at={bot.created_at}
                 updated_at={bot.updated_at}
                 addToArmy={addToArmy}
+                inArmy={inArmy}
+                setInArmy={setInArmy}
               />
             );
           })}

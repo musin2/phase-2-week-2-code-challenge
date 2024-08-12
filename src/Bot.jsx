@@ -12,10 +12,22 @@ function Bot({
   created_at,
   updated_at,
   addToArmy,
+  inArmy,
+  setInArmy,
 }) {
   //Delete a bot from the Database (db.json)
   function dischargeBot(event) {
-    console.log(id);
+    //Filter Array of Your Army to remove deleted bot 
+    const withoutBot = inArmy.filter((x) => x.id !== id);
+    setInArmy(withoutBot);
+    fetch(`http://localhost:3000/bots/${id}`, {
+      method: "DELETE",
+    }).then((res) => {
+      if (confirm(`Do you want to Remove Bot ${id} from the collection?`)) {
+       // window.location.reload();
+      }
+      return res.json();
+    });
   }
   //Bot is Added to Army via a callback function from BotCollection
 
