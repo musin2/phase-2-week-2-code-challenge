@@ -4,13 +4,15 @@ import Card from "react-bootstrap/Card";
 import Soldiers from "./Soldiers";
 
 function YourBotArmy({ inArmy, setInArmy }) {
-
   //Discharge bot from YourBotArmy Array
   function dischargeBot(event) {
     const dischargeId = event.target.value;
-    const withoutBot = inArmy.filter((x) => x.id !== dischargeId)
-    setInArmy(withoutBot);
-    alert("Bot Removed from Your Army");
+    const withoutBot = inArmy.filter((x) => x.id !== dischargeId);
+    if (confirm(`Remove Bot ${dischargeId} from Your Army?`)) {
+      setInArmy(withoutBot);
+       alert("Bot Removed from Your Army");
+    }
+
   }
   return (
     <>

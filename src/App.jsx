@@ -16,7 +16,7 @@ function App() {
       .then((response) => response.json())
       .then((bData) => setBots(bData))
       .catch((error) => console.error("Failed to GET BOT data" + error));
-  }, []);
+  }, [bots]);       //Re-render component when there is change in 'bots' state i.e. when a bot is deleted
   //Display message while data is being fetched
   if (!bots) return <h1>Loading ...</h1>;
 
