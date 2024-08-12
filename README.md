@@ -32,13 +32,13 @@ Welcome to **Bot Battlr**, the ultimate app where you can custom-build your own 
    ```
 
 3.Start JSON server
-
-    ```bash
-    Copy code
-    json-server --watch src/data/db.json
-    ```
+   ```bash
+   Copy code
+   json-server --watch src/data/db.json
+   ```
+   
 4. Start React App
     ```bash
     npm run dev
     ```
-5. 
+
