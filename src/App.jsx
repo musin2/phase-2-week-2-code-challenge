@@ -36,7 +36,7 @@ function App() {
         {page === "Bots" ? (
           <BotCollection bots={bots} inArmy={inArmy} setInArmy={setInArmy} />
         ) : (
-          <YourBotArmy inArmy={inArmy} />
+          <YourBotArmy inArmy={inArmy} setInArmy={setInArmy} />
         )}
       </div>
     </>

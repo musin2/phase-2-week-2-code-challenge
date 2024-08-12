@@ -11,14 +11,11 @@ function Soldiers({
   catchphrase,
   created_at,
   updated_at,
+  dischargeBot,
 }) {
-  //Delete a bot from the Army Array
-  function dischargeBot(event) {
-    console.log(id);
-  }
+
 
   return (
-    
     <tr>
       <td>
         <img src={avatar_url} alt={name} width={90} height={90} />

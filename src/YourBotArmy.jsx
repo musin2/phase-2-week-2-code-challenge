@@ -3,13 +3,19 @@ import Card from "react-bootstrap/Card";
 
 import Soldiers from "./Soldiers";
 
-function YourBotArmy({ inArmy }) {
-    console.error(typeof(inArmy));
-    
+function YourBotArmy({ inArmy, setInArmy }) {
+
+  //Discharge bot from YourBotArmy Array
+  function dischargeBot(event) {
+    const dischargeId = event.target.value;
+    const withoutBot = inArmy.filter((x) => x.id !== dischargeId)
+    setInArmy(withoutBot);
+    alert("Bot Removed from Your Army");
+  }
   return (
     <>
       <h1>Your Bot Army</h1>
-         <table>
+      <table>
         <thead>
           <tr className="light">
             <th>Avatar</th>
@@ -25,25 +31,25 @@ function YourBotArmy({ inArmy }) {
           </tr>
         </thead>
         <tbody>
-      {inArmy.map((bot) => {
-        return (
-          <Soldiers
-            key={bot.id}
-            id={bot.id}
-            avatar_url={bot.avatar_url}
-            name={bot.name}
-            health={bot.health}
-            damage={bot.damage}
-            armor={bot.armor}
-            bot_class={bot.bot_class}
-            catchphrase={bot.catchphrase}
-            created_at={bot.created_at}
-            updated_at={bot.updated_at}
-           
-          />
-        );
-      })}
-      </tbody>
+          {inArmy.map((bot) => {
+            return (
+              <Soldiers
+                key={bot.id}
+                id={bot.id}
+                avatar_url={bot.avatar_url}
+                name={bot.name}
+                health={bot.health}
+                damage={bot.damage}
+                armor={bot.armor}
+                bot_class={bot.bot_class}
+                catchphrase={bot.catchphrase}
+                created_at={bot.created_at}
+                updated_at={bot.updated_at}
+                dischargeBot={dischargeBot}
+              />
+            );
+          })}
+        </tbody>
       </table>
     </>
   );
