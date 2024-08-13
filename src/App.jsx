@@ -12,11 +12,11 @@ function App() {
 
   //GET bots data from database
   useEffect(() => {
-    fetch(" https://my-json-server.typicode.com/musin2/phase-2-week-2-code-challenge/bots")
+    fetch("http://localhost:3000/bots")
       .then((response) => response.json())
       .then((bData) => setBots(bData))
       .catch((error) => console.error("Failed to GET BOT data" + error));
-  }, [bots]);       //Re-render component when there is change in 'bots' state i.e. when a bot is deleted
+  }, [inArmy]);       //Re-render component when there is change in 'bots' state i.e. when a bot is deleted
   //Display message while data is being fetched
   if (!bots) return <h1>Loading ...</h1>;
 
