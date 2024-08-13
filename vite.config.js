@@ -5,4 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: "/phase-2-week-2-code-challenge/",
+  server: {
+    host: true,
+    strictPort: true,
+    port: 1000,
+  },
 });

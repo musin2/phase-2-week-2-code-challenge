@@ -28,17 +28,16 @@ Welcome to **Bot Battlr**, the ultimate app where you can custom-build your own 
 
 2. Install dependencies
    ```bash
-    npm install
+   npm install
    ```
 
-3.Start JSON server
+3. Start JSON server
    ```bash
-   Copy code
    json-server --watch src/data/db.json
    ```
    
 4. Start React App
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
