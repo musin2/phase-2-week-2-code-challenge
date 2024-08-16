@@ -12,7 +12,7 @@ function App() {
 
   //GET bots data from database
   useEffect(() => {
-    fetch("http://localhost:3000/bots")
+    fetch("https://bot-battlr-backend.onrender.com/bots")
       .then((response) => response.json())
       .then((bData) => setBots(bData))
       .catch((error) => console.error("Failed to GET BOT data" + error));

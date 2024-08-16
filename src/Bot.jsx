@@ -20,7 +20,7 @@ function Bot({
     //Filter Array of Your Army to remove deleted bot 
     const withoutBot = inArmy.filter((x) => x.id !== id);
     setInArmy(withoutBot);
-    fetch(`http://localhost:3000/bots/${id}`, {
+    fetch(`https://bot-battlr-backend.onrender.com/bots/${id}`, {
       method: "DELETE",
     }).then((res) => {
       if (confirm(`Do you want to Remove Bot ${id} from the collection?`)) {
