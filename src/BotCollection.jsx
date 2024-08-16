@@ -5,13 +5,15 @@ import Bot from "./Bot";
 function BotCollection({ bots, inArmy, setInArmy }) {
   //Add a bot to 'YourBotArmy'
   function addToArmy(ev) {
-    const btnID = ev.target.value;
+    const btnID = Number(ev.target.value);
 
     //Check if bot is already in the Army before adding
-    const locateBot = inArmy.find((army) => army.id === btnID);
+    const locateBot = inArmy.find((army) => {return army.id === btnID});
+console.warn(locateBot);
 
     if (!locateBot) {
       const newArmyBot = bots.find((b) => b.id === btnID); //find the bot in the database with the same id as the one clicked
+console.warn(newArmyBot);
 
       //Check if newArmyBot has a value
       if (newArmyBot) {

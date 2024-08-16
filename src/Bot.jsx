@@ -18,16 +18,16 @@ function Bot({
   //Delete a bot from the Database (db.json)
   function dischargeBot(event) {
     //Filter Array of Your Army to remove deleted bot 
-    const withoutBot = inArmy.filter((x) => x.id !== id);
-    setInArmy(withoutBot);
+    if (confirm(`Do you want to Remove Bot ${id} from the collection?`)) {
+      const withoutBot = inArmy.filter((x) => x.id !== id);
+      setInArmy(withoutBot);
     fetch(`https://bot-battlr-backend.onrender.com/bots/${id}`, {
       method: "DELETE",
     }).then((res) => {
-      if (confirm(`Do you want to Remove Bot ${id} from the collection?`)) {
-       // window.location.reload();
-      }
       return res.json();
     });
+      alert("Bot Removed from the Database");
+    }
   }
   //Bot is Added to Army via a callback function from BotCollection
 

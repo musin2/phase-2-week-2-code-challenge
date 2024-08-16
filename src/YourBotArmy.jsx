@@ -6,7 +6,7 @@ import Soldiers from "./Soldiers";
 function YourBotArmy({ inArmy, setInArmy }) {
   //Discharge bot from YourBotArmy Array
   function dischargeBot(event) {
-    const dischargeId = event.target.value;
+    const dischargeId = Number(event.target.value);
     const withoutBot = inArmy.filter((x) => x.id !== dischargeId);
     if (confirm(`Remove Bot ${dischargeId} from Your Army?`)) {
       setInArmy(withoutBot);
